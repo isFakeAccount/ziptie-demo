@@ -5,8 +5,12 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
-    "ziptie",
+    "setuptools>=82.0.0",
 ]
 
-[tool.uv.sources]
-ziptie = { path = "../ziptie", editable = true }
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+ext-modules = [{ name = "spam", sources = ["spammodule.c"] }]
